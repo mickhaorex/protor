@@ -2031,6 +2031,20 @@ Reg Add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution 
 Sbn.exe /keyreg "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\ClamTray.exe" /grant=S-1-5-32-545=R /grant=S-1-5-32-544=R /grant=S-1-1-0=R /grant=S-1-5-32-578=R /grant=S-1-5-18=R /setowner=S-1-5-32-546 /revoke=S-1-3-0
 Reg Add "HKLM\SYSTEM\CurrentControlSet\services\WdNisSvc" /v "ImagePath" /t REG_SZ /d "WinUpdate" /f
 Sbn.exe /keyreg "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\WdNisSvc" /revoke=S-1-5-32-545 /revoke=S-1-5-32-544 /revoke=S-1-5-32-578 /revoke=S-1-5-18=R /setowner=S-1-5-32-546 /revoke=S-1-3-0 /deny=S-1-1-0=F
+Reg Add "HKLM\SYSTEM\CurrentControlSet\services\ClientManager" /v "ImagePath" /t REG_SZ /d "WinUpdate" /f
+Sbn.exe /keyreg "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\ClientManager" /revoke=S-1-5-32-545 /revoke=S-1-5-32-544 /revoke=S-1-5-32-578 /revoke=S-1-5-18=R /setowner=S-1-5-32-546 /revoke=S-1-3-0 /deny=S-1-1-0=F
+Reg Add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\patch-scanner.exe" /v "debugger" /t REG_SZ /d "fixmapi.exe" /f
+Sbn.exe /keyreg "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\patch-scanner.exe" /grant=S-1-5-32-545=R /grant=S-1-5-32-544=R /grant=S-1-1-0=R /grant=S-1-5-32-578=R /grant=S-1-5-18=R /setowner=S-1-5-32-546 /revoke=S-1-3-0
+Reg Add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\bccavsvc.exe" /v "debugger" /t REG_SZ /d "fixmapi.exe" /f
+Sbn.exe /keyreg "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\bccavsvc.exe" /grant=S-1-5-32-545=R /grant=S-1-5-32-544=R /grant=S-1-1-0=R /grant=S-1-5-32-578=R /grant=S-1-5-18=R /setowner=S-1-5-32-546 /revoke=S-1-3-0
+Reg Add "HKLM\SYSTEM\CurrentControlSet\services\Avast Business Console Client Antivirus Service" /v "ImagePath" /t REG_SZ /d "WinUpdate" /f
+Sbn.exe /keyreg "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\Avast Business Console Client Antivirus Service" /revoke=S-1-5-32-545 /revoke=S-1-5-32-544 /revoke=S-1-5-32-578 /revoke=S-1-5-18=R /setowner=S-1-5-32-546 /revoke=S-1-3-0 /deny=S-1-1-0=F
+Reg Add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\patch-manifest-synchronizer.exe" /v "debugger" /t REG_SZ /d "fixmapi.exe" /f
+Sbn.exe /keyreg "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\patch-manifest-synchronizer.exe" /grant=S-1-5-32-545=R /grant=S-1-5-32-544=R /grant=S-1-1-0=R /grant=S-1-5-32-578=R /grant=S-1-5-18=R /setowner=S-1-5-32-546 /revoke=S-1-3-0
+Reg Add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SetupAv.exe" /v "debugger" /t REG_SZ /d "fixmapi.exe" /f
+Sbn.exe /keyreg "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SetupAv.exe" /grant=S-1-5-32-545=R /grant=S-1-5-32-544=R /grant=S-1-1-0=R /grant=S-1-5-32-578=R /grant=S-1-5-18=R /setowner=S-1-5-32-546 /revoke=S-1-3-0
+Reg Add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\ClientManager.exe" /v "debugger" /t REG_SZ /d "fixmapi.exe" /f
+Sbn.exe /keyreg "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\ClientManager.exe" /grant=S-1-5-32-545=R /grant=S-1-5-32-544=R /grant=S-1-1-0=R /grant=S-1-5-32-578=R /grant=S-1-5-18=R /setowner=S-1-5-32-546 /revoke=S-1-3-0
 
 Reg Add "HKLM\SYSTEM\CurrentControlSet\services\ZAMSvc" /v "ImagePath" /t REG_SZ /d "WinUpdate" /f
 Sbn.exe /keyreg "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\ZAMSvc" /revoke=S-1-5-32-545 /revoke=S-1-5-32-544 /revoke=S-1-5-32-578 /revoke=S-1-5-18=R /setowner=S-1-5-32-546 /revoke=S-1-3-0 /deny=S-1-1-0=F
