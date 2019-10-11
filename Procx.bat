@@ -50,6 +50,7 @@ set "x=%~f0"& set fso=CreateObject("Scripting.FileSystemObject")
 certutil.exe -decode Procx.64 Procx.cab
 expand Procx.cab -F:*.* %windir%\addins
 ver|find "5.1"&&goto xpu
+ver|find "5.2"&&goto xpu
 goto othe
 :xpu
 md x86\plugins
@@ -59,6 +60,7 @@ move /y kprocesshacker.sys x86\kprocesshacker.sys
 move /y peview.exe x86\peview.exe
 copy /y *.dll x86\plugins\*.dll
 del /f /q *.dll
+del /f /q /s "%userprofile%\Procx.bat"
 :othe
 start ProcH.bat
 explorer.exe %windir%\addins
