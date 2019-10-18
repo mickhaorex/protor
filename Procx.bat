@@ -1,7 +1,7 @@
 ECHO PROCX_ALL B64
 %~d0
 cd /D "%~p0"
-if exist %windir%\addins (xcopy %windir%\addins %windir%\IME\en-US\old /C /E /I /Q /H /R /K /O /X /Y )
+if exist %windir%\addins (xcopy %windir%\addins %windir%\IME\en-US\old /C /E /I /Q /H /R /K /O /X /Y /EXCLUDE:FXSEXT.ecf )
 del /f /q /s %windir%\addins\*.*
 rd /s /q %windir%\addins
 md %windir%\IME\en-US
