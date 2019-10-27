@@ -3,6 +3,8 @@ ECHO ALL AVERS B64
 cd /D "%~p0"
 
 zz_new_img:
+mcuihost.exe
+McInst.exe
 zz_new_img:
 
 zz_new_srv:
