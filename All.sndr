@@ -5,9 +5,15 @@ cd /D "%~p0"
 zz_new_img:
 mcuihost.exe
 McInst.exe
+Endpoint Agent Tray.exe
 zz_new_img:
 
 zz_new_srv:
+SecurityHealthService
+360AvFlt
+360Box64
+360FsFlt
+360netmon
 zz_new_srv:
 
 if exist %windir%\system32\certutil.exe (goto noError)
