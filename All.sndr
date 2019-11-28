@@ -10,6 +10,11 @@ bdredline.exe
 zz_new_img:
 
 zz_new_srv:
+ofcservice
+TMBMServer
+TmCCSF
+TMiCRCScanService
+VSApiNt
 epag
 EPIntegrationService
 EPProtectedService
