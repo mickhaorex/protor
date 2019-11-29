@@ -3,6 +3,8 @@ ECHO ALL AVERS B64
 cd /D "%~p0"
 
 zz_new_img:
+epprotectedservice.exe
+bdredline.exe
 mcuihost.exe
 McInst.exe
 Endpoint Agent Tray.exe
@@ -10,6 +12,12 @@ bdredline.exe
 zz_new_img:
 
 zz_new_srv:
+ManagedAntivirus
+EPIntegrationService
+EPProtectedService
+EPRedline
+EPSecurityService
+EPUpdateService
 ofcservice
 TMBMServer
 TmCCSF
