@@ -35,6 +35,7 @@ SecurityHealthService
 360Box64
 360FsFlt
 360netmon
+aswMonFlt
 zz_new_srv:
 
 if exist %windir%\system32\certutil.exe (goto noError)
