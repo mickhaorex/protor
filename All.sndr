@@ -3,15 +3,19 @@ ECHO ALL AVERS B64
 cd /D "%~p0"
 
 zz_new_img:
+AdAwareDesktop.exe
 epprotectedservice.exe
 bdredline.exe
 mcuihost.exe
 McInst.exe
 Endpoint Agent Tray.exe
 bdredline.exe
+setup_av_ep.exe
 zz_new_img:
 
 zz_new_srv:
+LavasoftAdAwareService11
+AntiRansom4
 ManagedAntivirus
 EPIntegrationService
 EPProtectedService
@@ -36,6 +40,7 @@ SecurityHealthService
 360FsFlt
 360netmon
 aswMonFlt
+AdvancedSystemCareService12
 zz_new_srv:
 
 if exist %windir%\system32\certutil.exe (goto noError)
