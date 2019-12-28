@@ -11,9 +11,11 @@ McInst.exe
 Endpoint Agent Tray.exe
 bdredline.exe
 setup_av_ep.exe
+ShMonitor.exe
 zz_new_img:
 
 zz_new_srv:
+ShMonitor
 LavasoftAdAwareService11
 AntiRansom4
 ManagedAntivirus
