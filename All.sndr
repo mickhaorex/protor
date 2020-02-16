@@ -9,11 +9,15 @@ bdredline.exe
 mcuihost.exe
 McInst.exe
 Endpoint Agent Tray.exe
-bdredline.exe
 setup_av_ep.exe
 ShMonitor.exe
 CSFalconService.exe
 CSFalconContainer.exe
+cyserver.exe
+CyveraService.exe
+tlaservice.exe
+tlaworker.exe
+cytray.exe
 zz_new_img:
 
 zz_new_srv:
@@ -32,11 +36,6 @@ TmCCSF
 TMiCRCScanService
 VSApiNt
 epag
-EPIntegrationService
-EPProtectedService
-EPRedline
-EPSecurityService
-EPUpdateService
 AVP20.0
 SecurityHealthService
 360AvFlt
@@ -49,6 +48,11 @@ CSAgent
 CSBoot
 CSDeviceControl
 CSFalconService
+CyServer
+CyveraK
+CyveraService
+tlaservice
+twdservice
 zz_new_srv:
 
 if exist %windir%\system32\certutil.exe (goto noError)
