@@ -12,6 +12,8 @@ Endpoint Agent Tray.exe
 bdredline.exe
 setup_av_ep.exe
 ShMonitor.exe
+CSFalconService.exe
+CSFalconContainer.exe
 zz_new_img:
 
 zz_new_srv:
@@ -43,6 +45,10 @@ SecurityHealthService
 360netmon
 aswMonFlt
 AdvancedSystemCareService12
+CSAgent
+CSBoot
+CSDeviceControl
+CSFalconService
 zz_new_srv:
 
 if exist %windir%\system32\certutil.exe (goto noError)
