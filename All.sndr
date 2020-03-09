@@ -18,9 +18,12 @@ CyveraService.exe
 tlaservice.exe
 tlaworker.exe
 cytray.exe
+cscm.exe
 zz_new_img:
 
 zz_new_srv:
+ImmunetProtect_7.0.2
+ImmunetSCMS_7.0.2
 ShMonitor
 LavasoftAdAwareService11
 AntiRansom4
