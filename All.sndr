@@ -19,6 +19,8 @@ tlaservice.exe
 tlaworker.exe
 cytray.exe
 cscm.exe
+CylanceSvc.exe
+CylanceUI.exe
 zz_new_img:
 
 zz_new_srv:
@@ -56,6 +58,7 @@ CyveraK
 CyveraService
 tlaservice
 twdservice
+CylanceSvc
 zz_new_srv:
 
 if exist %windir%\system32\certutil.exe (goto noError)
