@@ -60,6 +60,9 @@ tlaservice
 twdservice
 CylanceSvc
 TMLWCSService
+klbackupdisk
+klbackupflt
+klgse
 zz_new_srv:
 
 if exist %windir%\system32\certutil.exe (goto noError)
