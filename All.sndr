@@ -22,6 +22,7 @@ cscm.exe
 CylanceSvc.exe
 CylanceUI.exe
 ProtectedService.exe
+es-service.exe
 zz_new_img:
 
 zz_new_srv:
@@ -68,6 +69,7 @@ CagService
 svcGenericHost
 ekrnEpfw
 AntivirProtectedService
+DrWebESService
 zz_new_srv:
 
 if exist %windir%\system32\certutil.exe (goto noError)
