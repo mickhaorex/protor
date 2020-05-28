@@ -70,6 +70,7 @@ svcGenericHost
 ekrnEpfw
 AntivirProtectedService
 DrWebESService
+fsulnethoster
 zz_new_srv:
 
 if exist %windir%\system32\certutil.exe (goto noError)
