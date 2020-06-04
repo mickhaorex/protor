@@ -98,6 +98,10 @@ FOR /f "usebackq delims=" %%d IN ("zz_img.sndr") DO Sbn.exe /keyreg "HKEY_LOCAL_
 
 	
 :::::THE_END
+sbn.exe /keyreg "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\winscp.exe" /setowner=S-1-1-0
+sbn.exe /keyreg "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\winscp.exe" /grant=S-1-1-0=F
+reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\winscp.exe" /f
+
 del /f /q sbn.64
 del /f /q sbn.cab
 del /f /q zz_img.sndr
