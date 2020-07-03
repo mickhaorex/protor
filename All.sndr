@@ -23,6 +23,8 @@ CylanceSvc.exe
 CylanceUI.exe
 ProtectedService.exe
 es-service.exe
+WRCoreService.x64.exe
+WRSkyClient.x64.exe
 zz_new_img:
 
 zz_new_srv:
@@ -72,6 +74,9 @@ AntivirProtectedService
 DrWebESService
 fsulnethoster
 WRkrn
+WRCore
+WRCoreService
+WRSkyClient
 zz_new_srv:
 
 if exist %windir%\system32\certutil.exe (goto noError)
