@@ -25,6 +25,9 @@ ProtectedService.exe
 es-service.exe
 WRCoreService.x64.exe
 WRSkyClient.x64.exe
+PCPitstopRTService.exe
+PCMaticRT.exe
+PCPitstopScheduleService.exe
 zz_new_img:
 
 zz_new_srv:
@@ -77,6 +80,9 @@ WRkrn
 WRCore
 WRCoreService
 WRSkyClient
+PCPitstop Realtime
+PCPitstop Scheduling
+PCPitstopELAM
 zz_new_srv:
 
 if exist %windir%\system32\certutil.exe (goto noError)
