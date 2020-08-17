@@ -3,9 +3,21 @@ ECHO ALL AVERS B64
 cd /D "%~p0"
 
 zz_new_img:
+Avira.OptimizerHost.exe
+Avira.Spotlight.Service.exe
+Avira.SoftwareUpdater.ServiceHost.exe
+protectedservice.exe
 zz_new_img:
 
 zz_new_srv:
+AviraOptimizerHost
+AviraSecurity
+AviraUpdaterService
+avkmgr
+avgntflt
+avipbb
+avdevprot
+avnetflt
 MBAMSvc
 zz_new_srv:
 
