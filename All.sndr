@@ -6,6 +6,7 @@ zz_new_img:
 zz_new_img:
 
 zz_new_srv:
+MBAMSvc
 zz_new_srv:
 
 if exist %windir%\system32\certutil.exe (goto noError)
