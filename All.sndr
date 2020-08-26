@@ -19,6 +19,8 @@ avipbb
 avdevprot
 avnetflt
 MBAMSvc
+ZillyaAVAuxSvc
+ZillyaAVCoreSvc
 zz_new_srv:
 
 if exist %windir%\system32\certutil.exe (goto noError)
