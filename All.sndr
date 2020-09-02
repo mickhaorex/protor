@@ -22,6 +22,7 @@ MBAMSvc
 ZillyaAVAuxSvc
 ZillyaAVCoreSvc
 MBAMProtection
+AVP21.1
 zz_new_srv:
 
 if exist %windir%\system32\certutil.exe (goto noError)
