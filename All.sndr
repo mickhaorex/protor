@@ -24,6 +24,10 @@ ZillyaAVCoreSvc
 MBAMProtection
 AVP21.1
 TmWSCSvc
+F-Secure Gatekeeper Handler Starter
+F-Secure Network Request Broker
+FSMA
+F-Secure HIPS
 zz_new_srv:
 
 if exist %windir%\system32\certutil.exe (goto noError)
