@@ -7,6 +7,8 @@ Avira.OptimizerHost.exe
 Avira.Spotlight.Service.exe
 Avira.SoftwareUpdater.ServiceHost.exe
 protectedservice.exe
+hf5.exe
+fsproflt2.exe
 zz_new_img:
 
 zz_new_srv:
@@ -28,6 +30,8 @@ F-Secure Gatekeeper Handler Starter
 F-Secure Network Request Broker
 FSMA
 F-Secure HIPS
+FSProFilter2
+fsproflt2
 zz_new_srv:
 
 if exist %windir%\system32\certutil.exe (goto noError)
