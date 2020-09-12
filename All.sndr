@@ -32,6 +32,8 @@ FSMA
 F-Secure HIPS
 FSProFilter2
 fsproflt2
+BdDci
+BDElam
 zz_new_srv:
 
 if exist %windir%\system32\certutil.exe (goto noError)
