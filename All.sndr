@@ -34,6 +34,11 @@ FSProFilter2
 fsproflt2
 BdDci
 BDElam
+avc3
+Ignis
+trufos
+gzflt
+atc
 zz_new_srv:
 
 if exist %windir%\system32\certutil.exe (goto noError)
