@@ -9,6 +9,7 @@ Avira.SoftwareUpdater.ServiceHost.exe
 protectedservice.exe
 hf5.exe
 fsproflt2.exe
+mbamscheduler.exe
 zz_new_img:
 
 zz_new_srv:
@@ -39,6 +40,9 @@ Ignis
 trufos
 gzflt
 atc
+MBAMScheduler
+SAVOnAccess
+swi_callout
 zz_new_srv:
 
 if exist %windir%\system32\certutil.exe (goto noError)
